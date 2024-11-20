@@ -4,7 +4,7 @@ services:
     build:
       context: .
     ports:
-      - "5000:5000"
+      - "8080:8080"
     environment:
       - CSV_FILE_PATH=/app/data/ship_density_data.csv
     restart: unless-stopped
