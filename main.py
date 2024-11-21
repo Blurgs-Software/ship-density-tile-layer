@@ -13,7 +13,9 @@ import os
 app = Flask(__name__)
 
 # Load and process data using Dask
-csv_file_path = os.environ.get('CSV_FILE_PATH', '/app/data/ship_density_data.csv')
+csv_file_path = os.environ.get('CSV_FILE_PATH', '/data/your_dataset.csv')
+if not os.path.exists(csv_file_path):
+    raise FileNotFoundError(f"CSV file not found at {csv_file_path}")
 data = dd.read_csv(csv_file_path)
 # data = dd.read_csv('fake_data.csv')
 west = data['top_left_lon'].min().compute()
@@ -115,6 +117,7 @@ def get_tile(attribute, z, x, y):
         return "Tile not found", 404
     
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
+    port = int(os.environ.get('PORT', 8080))  # Use PORT from environment
+    app.run(host='0.0.0.0', port=port)  # Bind to 0.0.0.0
 
     
