@@ -100,7 +100,7 @@ def generate_raster_for_attribute(attribute):
 @app.route('/generate_tiles/<attribute>')
 def generate_tiles(attribute):
     print(attribute,"anzil")
-    if attribute not in data.columns:
+    if attribute not in attributes:
         return "Attribute not found in data", 404
     generate_raster_for_attribute(attribute)
     return f"Raster and tiles generated for {attribute}", 200
