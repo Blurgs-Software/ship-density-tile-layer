@@ -117,7 +117,7 @@ def get_tile(attribute, z, x, y):
         return "Tile not found", 404
     
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 8080))  # Use PORT from environment
+    port = int(os.environ.get('PORT', 8000))  # Use PORT from environment
     app.run(host='0.0.0.0', port=port)  # Bind to 0.0.0.0
 
     

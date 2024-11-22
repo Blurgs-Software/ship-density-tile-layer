@@ -36,7 +36,7 @@
         && pip install --no-cache-dir -r requirements.txt gunicorn
 
     # Expose the port the app runs on
-    EXPOSE 8080
+    EXPOSE 8000
 
     # Run the application
     CMD ["python", "main.py"]
