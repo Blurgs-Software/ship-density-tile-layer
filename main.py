@@ -35,7 +35,7 @@ def draw_rectangle_with_border(raster, top_left_row, bottom_right_row, top_left_
         raster[min_row, min_col:max_col] = border_color
         raster[max_row - 1, min_col:max_col] = border_color
 
-def convert_tif_to_tiles(input_tif, output_dir, zoom_levels='0-3'):
+def convert_tif_to_tiles(input_tif, output_dir, zoom_levels='8-9'):
     gdal_command = f"gdal2tiles.py -p raster -z {zoom_levels} {input_tif} {output_dir}"
     os.system(gdal_command)
 
