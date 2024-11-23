@@ -22,7 +22,7 @@ ENV C_INCLUDE_PATH=/usr/include/gdal
 # Download the large CSV file from the public S3 bucket and store it in a specific directory
 RUN mkdir -p /data
 # Replace '[URL_to_your_S3_CSV]' with your actual S3 file URL
-RUN wget -O /data/your_dataset.csv https://ship-density-data.s3.us-east-1.amazonaws.com/ship_density_data.csv
+RUN wget -O /data/your_dataset.csv https://ship-density-csv.s3.ap-south-1.amazonaws.com/ship_density_data.csv
 
 # Set environment variable for CSV file path
 ENV CSV_FILE_PATH=/data/your_dataset.csv
