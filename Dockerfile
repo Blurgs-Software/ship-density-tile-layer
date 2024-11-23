@@ -26,7 +26,7 @@ RUN wget -O /data/your_dataset.csv https://ship-density-csv.s3.ap-south-1.amazon
 
 # Set environment variable for CSV file path
 ENV CSV_FILE_PATH=/data/your_dataset.csv
-
+ENV PYTHONUNBUFFERED 1
 # Copy the current directory contents into the container at /app
 COPY . /app
 
